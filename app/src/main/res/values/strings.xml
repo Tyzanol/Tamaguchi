@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Tamaguchi</string>
+    <string name="feed">Feed</string>
+    <string name="give_bottle">Give Bottle</string>
+    <string name="play">Play</string>
+    <string name="bed">Bed</string>
 </resources>

@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
+
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,20 +24,28 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar pbBored;
     private ProgressBar pbHappy;
     private Creature creature;
+    private GifImageView creatureGif;
+    private int count = 0;
+    private TextView tvAge;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        creature = new Creature("boris", this);
+        creatureGif = (GifImageView) findViewById(R.id.gif);
+        creature = new Creature("boris", creatureGif, this);
         pbHunger = (ProgressBar) findViewById(R.id.progressHungry);
         pbThirst = (ProgressBar) findViewById(R.id.progressThirsty);
         pbEnergy = (ProgressBar) findViewById(R.id.progressEnergy);
         pbBored = (ProgressBar) findViewById(R.id.progressBored);
         pbHappy = (ProgressBar) findViewById(R.id.progressHappy);
         TextView tvName = (TextView) findViewById(R.id.textName);
-        TextView tvAge = (TextView) findViewById(R.id.textAge);
-        
+        tvAge = (TextView) findViewById(R.id.textAge);
+
+        GifDrawable gd = (GifDrawable) creatureGif.getDrawable();
+        gd.pause();
+
         final ImageButton buttonBed = findViewById(R.id.buttonBed);
         buttonBed.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -73,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
                 Creature.errorCode error;
                 if((error = creature.play()) != Creature.errorCode.allGood){
                     toastError(creature.getName(), error);
+                }
+                else{
+                    creatureGif.setImageResource(R.drawable.play);
                 }
                 setPgBars();
             }

@@ -1,9 +1,11 @@
 package com.androidaena.tamaguchi;
 
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         pbHappy = (ProgressBar) findViewById(R.id.progressHappy);
         TextView tvName = (TextView) findViewById(R.id.textName);
         TextView tvAge = (TextView) findViewById(R.id.textAge);
-
-        final Button buttonBed = findViewById(R.id.buttonBed);
+        
+        final ImageButton buttonBed = findViewById(R.id.buttonBed);
         buttonBed.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Creature.errorCode error;
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button buttonFeed = findViewById(R.id.buttonFeed);
+        final ImageButton buttonFeed = findViewById(R.id.buttonFeed);
         buttonFeed.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Creature.errorCode error;
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button buttonBottle = findViewById(R.id.buttonBottle);
+        final ImageButton buttonBottle = findViewById(R.id.buttonBottle);
         buttonBottle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Creature.errorCode error;
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button buttonPlay = findViewById(R.id.buttonPlay);
+        final ImageButton buttonPlay = findViewById(R.id.buttonPlay);
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Creature.errorCode error;

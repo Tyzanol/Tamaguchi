@@ -45,6 +45,12 @@ public class Creature {
     public errorCode sleep(){
         if(stats.getEnergy() < 10){
             stats.setEnergy(stats.getEnergy() + 1);
+            if(stats.getHunger() > 0){
+                stats.setHunger(stats.getHunger() - 1);
+            }
+            if(stats.getThirst() > 0){
+                stats.setThirst(stats.getThirst() - 1);
+            }
             return errorCode.allGood;
         }
         return errorCode.notTired;

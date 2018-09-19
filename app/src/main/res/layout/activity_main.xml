@@ -27,43 +27,53 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="85dp"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/buttonBed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="@string/bed" />
+            android:background="@drawable/btn_background"
+            android:src="@drawable/ic_bed"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/buttonFeed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="@string/feed" />
+            android:background="@drawable/btn_background"
+            android:backgroundTint="#90ff88"
+            android:src="@drawable/ic_restaurant"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/buttonBottle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="@string/give_bottle" />
+            android:background="@drawable/btn_background"
+            android:backgroundTint="#88ebff"
+            android:src="@drawable/ic_lemonade"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/buttonPlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="@string/play" />
+            android:background="@drawable/btn_background"
+            android:backgroundTint="#c588ff"
+            android:src="@drawable/ic_ball"/>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView4"
+    <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
-        android:layout_height="188dp"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_height="wrap_content"
+        android:src="@drawable/look_around" />
 
     <LinearLayout
         android:layout_width="match_parent"
